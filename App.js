@@ -1,12 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import TabNavigation from './src/Navigations/TabNavigation'
+import { colors } from './src/global/colores';
+import AuthStack1 from './src/Navigations/StackAuth';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar
+        barStyle = "light-content"
+        backgroundColor={colors.accent}
+        />
+        <AuthStack1 />
+     </NavigationContainer>
   );
 }
 
